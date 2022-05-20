@@ -9,11 +9,14 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/style.css' %}" />
 </head>
 
 <body>
     <div class="container">
-                <h1>Todo bearbeiten</h1>
+                <h1 class="mx-2 my-4">Todo bearbeiten</h1>
                 <form action="" method="POST" autocomplete="off">
                     {% csrf_token %}
                     {{form}}

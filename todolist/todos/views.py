@@ -10,7 +10,7 @@ def todos_table(request):
     context = {'todos_table':ListEntry.objects.all()}
     return render(request, "todo_table.html",context)
 
-#TODO: Löschen
+#Todo löschen
 def todos_delete(request, id):
     ListEntry.objects.filter(pk=id).delete()
     context = {'todos_table': ListEntry.objects.all()}
@@ -21,6 +21,8 @@ def todos_edit(request,id=0):
     if request.method == "GET":
         listEntry = ListEntry.objects.get(pk=id)
         form = TodoForm(instance=listEntry)
+        print(listEntry)
+        print(form)
         return render(request, "todo_edit.html",{'form': form})
     else:
         listEntry = ListEntry.objects.get(pk=id)

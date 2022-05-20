@@ -11,8 +11,10 @@ def todos_table(request):
     return render(request, "todo_table.html",context)
 
 #TODO: Löschen
-def todos_delete(request):
-    return
+def todos_delete(request, id):
+    ListEntry.objects.filter(pk=id).delete()
+    context = {'todos_table': ListEntry.objects.all()}
+    return render(request, "todo_table.html", context)
 
 #Todos bearbeiten GET und POST
 def todos_edit(request,id=0):

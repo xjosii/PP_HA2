@@ -33,7 +33,7 @@
                     <tr>
                         <td>{{listEntry.task}}</td>
                         <td>{{listEntry.deadline}}</td>
-                        <td>{{listEntry.progress}}</td>
+                        <td>{{listEntry.progress}} %</td>
                         <td>
                             <a
                                 href="{% url 'edit_listEntry' listEntry.id %}"
@@ -42,7 +42,7 @@
                                 >Bearbeiten</a
                             >
                             <a
-                                href="{% url 'edit_listEntry' listEntry.id %}"
+                                href="{% url 'delete_listEntry' listEntry.id %}"
                                 class="btn btn-danger"
                                 role="button"
                                 >Löschen</a
